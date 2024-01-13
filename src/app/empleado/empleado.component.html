@@ -1,1 +1,10 @@
 <p>empleado works!</p>
+
+<p>Edad del empleado: {{edad > 18 ? 'Mayor de edad' : 'Menor de edad'}}</p>
+
+<p>Empresa del empleado: {{empresa.value}}</p>
+Introduce la empresa: <input type="text" #empresa>
+<input type="button" value="Boton" (click)="llamaEmpresa(empresa.value)">
+
+<p>Empresa del empleado: {{empresa2.value}}</p>
+Introduce la empresa (keyup): <input type="text" #empresa2 (keyup)="0">

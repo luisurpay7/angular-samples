@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class EmpleadoComponent {
 
+  edad = 24;
+
+  llamaEmpresa(value: String){
+
+  }
+
 }
