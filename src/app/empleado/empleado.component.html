@@ -8,3 +8,13 @@ Introduce la empresa: <input type="text" #empresa>
 
 <p>Empresa del empleado: {{empresa2.value}}</p>
 Introduce la empresa (keyup): <input type="text" #empresa2 (keyup)="0">
+
+<br>
+<!-- En HTML las propiedades disabled y checked no se les asignan valores pero al usar Property Binding
+toma valores booleanos por lo que se puede usar operador de asignacion (=) y asingar true or false -->
+<input type="text" disabled>
+<input type="checkbox" checked>
+<br>
+<input type="text" [disabled]="habilitacionCuadro">
+<input type="checkbox" [checked]="usuRegistrado">
+{{getRegistroUsuario()}}
