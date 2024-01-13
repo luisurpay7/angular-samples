@@ -4,6 +4,7 @@
   <!-- Dos formas de leer desde input y mostrarlo en otra parte del componente -->
   <input type="text" #nombre><br>
   <input type="text" name="apellido" [(ngModel)]="apellido"><br>
+  <input type="text" name="cargo" [(ngModel)]="cargo"><br>
   <input type="button" (click)="registrarUsuario()" value="Registrar"><br>
 </form>
 
@@ -11,7 +12,9 @@
 <p *ngIf="registrado">{{mensaje}} con el nombre de {{nombre.value}} {{apellido}}</p>
 
 <!-- ngIf + else -->
-<p *ngIf="registrado else noRegistrado">{{mensaje}} con el nombre de {{nombre.value}} {{apellido}}</p>
+<p *ngIf="registrado else noRegistrado">{{mensaje}} con el nombre de {{nombre.value}}
+  <span [ngClass]="{paraApellido:apellido=='ugarte'}">{{apellido}}</span>
+  con cargo <span [ngStyle]="{color: cargo=='director' ? 'red' : 'black'}">{{cargo}}</span></p>
 
 <ng-template #noRegistrado>
   <p>Nadie registrado</p>

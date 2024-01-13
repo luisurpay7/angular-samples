@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'Registro de Usuarios';
 
   apellido: string = "";
+  cargo: string = "";
 
   mensaje = "Usuarios registrado con éxito";
   registrado = false;
