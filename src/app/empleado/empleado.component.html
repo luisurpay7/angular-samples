@@ -18,3 +18,12 @@ toma valores booleanos por lo que se puede usar operador de asignacion (=) y asi
 <input type="text" [disabled]="habilitacionCuadro">
 <input type="checkbox" [checked]="usuRegistrado">
 {{getRegistroUsuario()}}
+
+<br><br>
+{{textoDeRegistro}}
+<br>
+Registrado: <input type="checkbox" (click)="setUsuarioRegistrado()">
+
+<br><br>
+Registrado: <input type="radio" value="si" name="nRegistro" (click)="setUsuarioRegistrado2($event)">
+No registrado: <input type="radio" value="no" name="nRegistro" (click)="setUsuarioRegistrado2($event)">

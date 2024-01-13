@@ -19,4 +19,20 @@ export class EmpleadoComponent {
   getRegistroUsuario(){
     this.usuRegistrado=true;
   }
+
+  textoDeRegistro="No hay usuario registrado";
+
+  setUsuarioRegistrado(){
+    // alert("Nuevo usuario");
+    this.textoDeRegistro = "Hay un usuario registrado"
+  }
+
+  setUsuarioRegistrado2(event: Event){
+    // alert(event.target); //HTMLImputElement
+    if((<HTMLInputElement>event.target).value=="si"){ //como hacer un casting: transformar el objeto elemento a un objeto HTML para acceder a su propiedad
+      this.textoDeRegistro = "Hay un usuario registrado"
+    }else{
+      this.textoDeRegistro = "No hay nadie registrado"
+    }
+  }
 }
