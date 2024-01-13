@@ -2,6 +2,14 @@
 
 <p>Edad del empleado: {{edad > 18 ? 'Mayor de edad' : 'Menor de edad'}}</p>
 
+<!--
+-'empresa' tiene como valor TODO el elemento HTML: <input type="text">
+ usar el # seria lo equivante a:
+ empresa = document.getElementById("demo");
+-luego se puede acceder a sus atributos de 'empresa' al ser un HTMLInputElement:
+ empresa.value
+ empresa.type ...
+-->
 <p>Empresa del empleado: {{empresa.value}}</p>
 Introduce la empresa: <input type="text" #empresa>
 <input type="button" value="Boton" (click)="llamaEmpresa(empresa.value)">
@@ -27,3 +35,7 @@ Registrado: <input type="checkbox" (click)="setUsuarioRegistrado()">
 <br><br>
 Registrado: <input type="radio" value="si" name="nRegistro" (click)="setUsuarioRegistrado2($event)">
 No registrado: <input type="radio" value="no" name="nRegistro" (click)="setUsuarioRegistrado2($event)">
+
+<br><br>
+Nombre de pais: {{pais}}
+<br>Introduce pais: <input type="text" [(ngModel)]="pais">

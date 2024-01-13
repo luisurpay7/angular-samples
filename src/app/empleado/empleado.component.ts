@@ -35,4 +35,7 @@ export class EmpleadoComponent {
       this.textoDeRegistro = "No hay nadie registrado"
     }
   }
+
+  pais="Peru";
+
 }
