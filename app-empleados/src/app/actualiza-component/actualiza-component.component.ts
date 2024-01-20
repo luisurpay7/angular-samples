@@ -40,6 +40,11 @@ export class ActualizaComponentComponent {
     this.router.navigate(['']);
   }
 
+  eliminarEmpleado(){
+    this.empleadosService.eliminarEmpleadoServicio(this.indice);
+    this.router.navigate(['']);
+  }
+
   volverHome(){
     this.router.navigate(['']);
   }
