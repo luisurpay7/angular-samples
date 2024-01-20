@@ -13,7 +13,7 @@ export class CaracteristicasEmpleadoCComponent {
   constructor(private miServicio: ServicioEmpleadosService){}
 
   agregaCaracteristicas(value: string) {
-    this.miServicio.muestarMensaje(value),
+    // this.miServicio.muestarMensaje(value),
     this.caracteristicasEmpleados.emit(value);
   }
 
