@@ -13,6 +13,8 @@ export class ActualizaComponentComponent {
   constructor(private router: Router, private route: ActivatedRoute, private empleadosService: EmpleadoService){}
 
   ngOnInit(): void {
+    this.accion = parseInt(this.route.snapshot.queryParams['accion']);
+
     this.empleados = this.empleadosService.empleados;
     this.indice = this.route.snapshot.params['id'];
     // let empleado: Empleado = this.empleados[this.indice];
@@ -33,15 +35,28 @@ export class ActualizaComponentComponent {
 
   indice: number;
 
-  actualizarEmpleado(){
-    let nuevoEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
-    // this.miServicio.muestarMensaje("Nombre del empleado: " + nuevoEmpleado.nombre);
-    this.empleadosService.modificarEmpleadoServicio(this.indice, nuevoEmpleado);
-    this.router.navigate(['']);
-  }
+  accion: number;
 
-  eliminarEmpleado(){
-    this.empleadosService.eliminarEmpleadoServicio(this.indice);
+  // actualizarEmpleado(){
+  //   let nuevoEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+  //   // this.miServicio.muestarMensaje("Nombre del empleado: " + nuevoEmpleado.nombre);
+  //   this.empleadosService.modificarEmpleadoServicio(this.indice, nuevoEmpleado);
+  //   this.router.navigate(['']);
+  // }
+
+  // eliminarEmpleado(){
+  //   this.empleadosService.eliminarEmpleadoServicio(this.indice);
+  //   this.router.navigate(['']);
+  // }
+
+  actualizarEmpleado(){
+    if(this.accion == 1){
+      let nuevoEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+      // this.miServicio.muestarMensaje("Nombre del empleado: " + nuevoEmpleado.nombre);
+      this.empleadosService.modificarEmpleadoServicio(this.indice, nuevoEmpleado);
+    }else if(this.accion == 2){
+      this.empleadosService.eliminarEmpleadoServicio(this.indice);
+    }
     this.router.navigate(['']);
   }
 
