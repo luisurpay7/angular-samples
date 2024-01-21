@@ -19,4 +19,12 @@ export class DataServices {
     );
   }
 
+  actualizaEmpleados(indice: number, empleado: Empleado){
+    const url = `https://clientesangular-a5570-default-rtdb.firebaseio.com/datos/${indice}.json`;
+    this.httpClient.put(url, empleado).subscribe(
+      response => console.log("Se modificado el empleado: " + response),
+      error => console.log("Error: " + error),
+    );
+  }
+
 }
