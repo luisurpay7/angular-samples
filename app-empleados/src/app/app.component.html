@@ -18,6 +18,12 @@
         <li class="nav-item">
           <a class="nav-link" href="/contacto">Contacto</a>
         </li>
+        <li class="nav-item" style="margin-left: 1000px;" *ngIf="!estaLoguedo()">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="estaLoguedo()">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
       </ul>
     </div>
   </div>
