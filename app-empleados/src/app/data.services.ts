@@ -27,4 +27,11 @@ export class DataServices {
     );
   }
 
+  eliminarEmpleado(indice: number){
+    const url = `https://clientesangular-a5570-default-rtdb.firebaseio.com/datos/${indice}.json`;
+    this.httpClient.delete(url).subscribe(
+      response => console.log("Se eliminado el empleado: " + response),
+      error => console.log("Error: " + error),
+    );
+  }
 }
