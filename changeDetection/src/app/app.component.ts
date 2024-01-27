@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'changeDetection';
+  data = 'Luis';
+
+  changeData(){
+    this.data = 'Angel';
+  }
+
+  keyup(){}
 }
